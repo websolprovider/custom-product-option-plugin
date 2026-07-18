@@ -355,7 +355,6 @@ button.npo-or-trigger:active {
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
-	background: var(--npo-accent-dark) !important;
 	border: none !important;
 	box-shadow: none !important;
 	padding: 4px 14px;
@@ -365,10 +364,7 @@ button.npo-or-trigger:active {
 	-webkit-appearance: none;
 }
 
-button.npo-or-trigger:hover {
-	background: var(--npo-accent-dark) !important;
-	color: #fff !important;
-}
+
 
 .npo-or-trigger:last-child {
 	margin-bottom: 0;

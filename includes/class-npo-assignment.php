@@ -176,16 +176,22 @@ class NPO_Assignment {
 	/**
 	 * Get all published field-group post IDs that apply to a given product.
 	 *
+	 * Deliberately NOT cached beyond the current request: this query is
+	 * cheap (a handful of small custom-post-type rows), and caching it in a
+	 * persistent object cache (Redis/Memcached, common on managed hosting)
+	 * previously meant an edited field group could keep showing stale
+	 * results on the frontend for up to an hour after being saved.
+	 *
 	 * @param int $product_id Product (or variation parent) ID.
 	 *
 	 * @return int[]
 	 */
 	public static function get_group_ids_for_product( $product_id ) {
 
-		$cache_key = 'npo_groups_for_product_' . $product_id;
-		$cached    = wp_cache_get( $cache_key, 'npo' );
-		if ( false !== $cached ) {
-			return $cached;
+		static $request_cache = array();
+
+		if ( isset( $request_cache[ $product_id ] ) ) {
+			return $request_cache[ $product_id ];
 		}
 
 		$all_groups = get_posts(
@@ -210,7 +216,7 @@ class NPO_Assignment {
 			}
 		}
 
-		wp_cache_set( $cache_key, $matching, 'npo', HOUR_IN_SECONDS );
+		$request_cache[ $product_id ] = $matching;
 
 		return $matching;
 	}
