@@ -1,0 +1,134 @@
+/**
+ * Nimblix Product Options — Frontend styles.
+ *
+ * Theme-inheriting where it matters (font family, base text color) with
+ * structural spacing modeled on the common "options + live total" pattern
+ * used by product option/add-on plugins.
+ */
+
+.npo-product-fields {
+	margin: 1.5em 0;
+	max-width: 620px;
+}
+
+.npo-field {
+	margin-bottom: 1.4em;
+	padding-bottom: 1.4em;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.npo-field:last-child {
+	border-bottom: none;
+}
+
+.npo-field-label {
+	display: block;
+	font-weight: 700;
+	font-size: 1.02em;
+	margin-bottom: 0.3em;
+	color: inherit;
+}
+
+.npo-required {
+	color: #c0392b;
+	margin-left: 2px;
+}
+
+.npo-field-instructions {
+	margin: 0 0 0.75em;
+	font-size: 0.88em;
+	color: #6b7280;
+}
+
+.npo-unit-label {
+	font-size: 0.85em;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	opacity: 0.6;
+	margin: 0.75em 0 0.35em;
+}
+
+.npo-unit-block:first-child .npo-unit-label {
+	margin-top: 0;
+}
+
+.npo-field-options {
+	display: flex;
+	flex-direction: column;
+	gap: 0.55em;
+}
+
+.npo-option {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.55em;
+	cursor: pointer;
+	font-weight: 400;
+}
+
+.npo-option input[type="checkbox"],
+.npo-option input[type="radio"] {
+	margin: 0.2em 0 0;
+	flex-shrink: 0;
+	accent-color: #2563eb;
+	width: 16px;
+	height: 16px;
+}
+
+.npo-option-text {
+	flex: 1;
+	line-height: 1.4;
+}
+
+.npo-option-fee {
+	color: #2563eb;
+	font-weight: 600;
+	font-size: 0.95em;
+	white-space: nowrap;
+}
+
+.npo-field-conditional {
+	transition: opacity 0.15s ease;
+}
+
+/* Live price summary --------------------------------------------------- */
+
+.npo-price-summary {
+	margin-top: 1.5em;
+	padding-top: 1em;
+	border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.npo-price-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.4em 0;
+	color: #6b7280;
+	font-size: 0.95em;
+}
+
+.npo-price-value {
+	font-weight: 700;
+	color: inherit;
+}
+
+.npo-price-row-grand {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	margin-top: 0.3em;
+	padding-top: 0.6em;
+	color: inherit;
+	font-size: 1.05em;
+}
+
+.npo-price-row-grand .npo-price-value {
+	font-size: 1.15em;
+}
+
+.single_add_to_cart_button.npo-disabled,
+button[type="submit"].npo-disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+	pointer-events: none;
+}

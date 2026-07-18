@@ -1,0 +1,398 @@
+/**
+ * Nimblix Product Options — Admin styles.
+ *
+ * Follows native WordPress admin conventions (metabox padding, form-table
+ * proportions, WP button classes) with a single modern accent color used
+ * consistently, rather than a heavy custom design system.
+ */
+
+:root {
+	--npo-accent: #4f46e5;
+	--npo-accent-dark: #4338ca;
+	--npo-accent-bg: #eef2ff;
+	--npo-border: #dcdcde;
+	--npo-text-muted: #6b7280;
+	--npo-danger: #b32d2e;
+}
+
+.npo-or-trigger{
+	color:#ffffff !important;
+}
+
+.npo-fields-editor {
+	margin-top: 8px;
+}
+
+.npo-add-field-row {
+	margin-top: 12px;
+}
+
+.npo-add-field-btn,
+.npo-add-option-btn,
+.npo-add-rule-group {
+	border-color: var(--npo-accent) !important;
+	color: var(--npo-accent-dark) !important;
+}
+
+.npo-add-field-btn:hover,
+.npo-add-option-btn:hover,
+.npo-add-rule-group:hover {
+	background: var(--npo-accent-bg) !important;
+}
+
+/* Field panels ------------------------------------------------------- */
+
+.npo-field-panel {
+	border: 1px solid var(--npo-border);
+	border-radius: 4px;
+	margin-bottom: 10px;
+	background: #fff;
+}
+
+.npo-field-panel-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	padding: 10px 14px;
+	cursor: pointer;
+	user-select: none;
+}
+
+.npo-field-panel-header:hover {
+	background: #f6f7f7;
+}
+
+.npo-drag-handle {
+	color: #a7aaad;
+	cursor: grab;
+	font-size: 14px;
+}
+
+.npo-field-type-badge {
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.02em;
+	padding: 3px 8px;
+	border-radius: 3px;
+	background: var(--npo-accent-bg);
+	color: var(--npo-accent-dark);
+	white-space: nowrap;
+}
+
+.npo-field-panel-title {
+	flex: 1;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.npo-remove-field {
+	color: var(--npo-danger) !important;
+	font-size: 18px;
+	line-height: 1;
+	text-decoration: none;
+}
+
+.npo-field-panel-body {
+	display: none;
+	padding: 14px 16px 18px;
+	border-top: 1px solid var(--npo-border);
+}
+
+.npo-field-panel.is-open .npo-field-panel-body {
+	display: block;
+}
+
+.npo-field-panel.is-open .npo-field-panel-header {
+	border-bottom: 1px solid var(--npo-border);
+	background: #fafafd;
+}
+
+.npo-row {
+	margin-bottom: 12px;
+}
+
+.npo-row label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 4px;
+	color: #1d2327;
+}
+
+.npo-row-inline label {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-weight: 400;
+}
+
+.npo-row input[type="text"],
+.npo-row input[type="number"],
+.npo-row select,
+.npo-row textarea {
+	width: 100%;
+	max-width: 480px;
+}
+
+.npo-row-split {
+	display: flex;
+	gap: 20px;
+}
+
+.npo-row-split > div {
+	flex: 1;
+}
+
+.npo-hint {
+	font-weight: 400;
+	color: var(--npo-text-muted);
+	font-size: 12px;
+	margin-left: 4px;
+}
+
+.npo-section-label {
+	display: block;
+	font-weight: 600;
+	margin-bottom: 6px;
+}
+
+/* Options repeater ----------------------------------------------------- */
+
+.npo-options-repeater {
+	margin: 14px 0;
+	padding: 12px;
+	background: #f9f9fb;
+	border: 1px solid var(--npo-border);
+	border-radius: 4px;
+}
+
+.npo-options-grid-cols {
+	grid-template-columns: 18px 2fr 1.5fr 1.3fr 60px 18px;
+}
+
+.npo-options-header,
+.npo-option-row {
+	display: grid;
+	grid-template-columns: 18px 2fr 1.5fr 1.3fr 60px 18px;
+	align-items: center;
+	gap: 8px;
+	box-sizing: border-box;
+}
+
+.npo-option-row {
+	padding: 6px 0;
+	border-bottom: 1px solid #ececf0;
+}
+
+.npo-option-row:last-child {
+	border-bottom: none;
+}
+
+.npo-option-row * {
+	box-sizing: border-box;
+	min-width: 0;
+}
+
+.npo-option-drag {
+	font-size: 12px;
+	text-align: center;
+}
+
+.npo-option-label-input,
+.npo-option-pricing-type {
+	width: 100%;
+}
+
+.npo-option-amount-slot {
+	display: block;
+	width: 100%;
+}
+
+.npo-option-pricing-amount,
+.npo-option-pricing-formula {
+	width: 100%;
+}
+
+.npo-option-pricing-formula {
+	font-family: Consolas, Monaco, monospace;
+	font-size: 12px;
+}
+
+.npo-option-selected {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.npo-remove-option {
+	text-align: center;
+	color: var(--npo-danger) !important;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.npo-options-header {
+	padding: 0 0 6px;
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	color: var(--npo-text-muted);
+	border-bottom: 1px solid var(--npo-border);
+	margin-bottom: 4px;
+}
+
+/* Group-level Conditions builder (Field Group screen) --------------------- */
+
+.npo-conditions-editor {
+	margin-top: 4px;
+}
+
+.npo-condition-group {
+	background: #f9f9fb;
+	border: 1px solid var(--npo-border);
+	border-radius: 4px;
+	padding: 12px 14px;
+	margin-bottom: 10px;
+}
+
+.npo-condition-rule {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 8px;
+}
+
+.npo-condition-rule:last-child {
+	margin-bottom: 0;
+}
+
+.npo-rule-type {
+	flex: 0 0 120px;
+	background: #eef2ff !important;
+	color: var(--npo-accent-dark) !important;
+	font-weight: 600;
+}
+
+.npo-rule-operator {
+	flex: 0 0 160px;
+}
+
+.npo-rule-value {
+	flex: 1;
+}
+
+.npo-remove-condition-rule {
+	color: var(--npo-danger) !important;
+	font-size: 16px;
+	text-decoration: none;
+	flex: 0 0 auto;
+}
+
+.npo-condition-group-actions {
+	margin: 8px 0 0;
+}
+
+.npo-add-condition-group {
+	border-color: var(--npo-accent) !important;
+	color: var(--npo-accent-dark) !important;
+}
+
+.npo-add-condition-group:hover {
+	background: var(--npo-accent-bg) !important;
+}
+
+/* Conditional logic ------------------------------------------------------ */
+
+.npo-conditional-section {
+	margin-top: 16px;
+	padding-top: 14px;
+	border-top: 1px dashed var(--npo-border);
+}
+
+.npo-conditional-body {
+	margin-top: 10px;
+}
+
+.npo-rule-group {
+	background: #f9f9fb;
+	border: 1px solid var(--npo-border);
+	border-radius: 4px;
+	padding: 10px 12px;
+	margin-bottom: 8px;
+}
+
+.npo-rule-row {
+	display: flex;
+	gap: 8px;
+	margin-bottom: 6px;
+}
+
+.npo-rule-row select,
+.npo-rule-row input {
+	flex: 1;
+	min-width: 0;
+}
+
+.npo-remove-rule {
+	color: var(--npo-danger) !important;
+	font-size: 16px;
+	text-decoration: none;
+	flex: 0 0 auto;
+}
+
+.npo-rule-group-actions {
+	margin: 4px 0 0;
+}
+
+button.npo-or-trigger,
+button.npo-or-trigger:focus,
+button.npo-or-trigger:active {
+	display: block;
+	margin: 8px auto;
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	background: var(--npo-accent-dark) !important;
+	border: none !important;
+	box-shadow: none !important;
+	padding: 4px 14px;
+	border-radius: 10px;
+	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+}
+
+button.npo-or-trigger:hover {
+	background: var(--npo-accent-dark) !important;
+	color: #fff !important;
+}
+
+.npo-or-trigger:last-child {
+	margin-bottom: 0;
+}
+
+/* Assignment box (side metabox) ------------------------------------------ */
+
+#npo_assignment_metabox .inside label {
+	display: block;
+	margin-bottom: 6px;
+}
+
+/* Product edit screen note ------------------------------------------------ */
+
+.npo-assigned-groups-note {
+	background: var(--npo-accent-bg);
+	border: 1px solid #c7d2fe;
+	border-radius: 4px;
+	padding: 8px 12px;
+	font-size: 13px;
+}
+
+/* Settings page ----------------------------------------------------------- */
+
+.npo-settings-wrap h1 {
+	margin-bottom: 16px;
+}
