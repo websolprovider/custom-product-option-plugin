@@ -71,7 +71,6 @@
 .npo-option input[type="radio"] {
 	margin: 0.2em 0 0;
 	flex-shrink: 0;
-	accent-color: #2563eb;
 	width: 16px;
 	height: 16px;
 }
@@ -82,7 +81,7 @@
 }
 
 .npo-option-fee {
-	color: #2563eb;
+	color: inherit;
 	font-weight: 600;
 	font-size: 0.95em;
 	white-space: nowrap;
